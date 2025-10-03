@@ -34,19 +34,33 @@ Process
 
 The process of creating subtitles for this project:
 
-### Install Requirements
-You will need
-**Python 3.11+** and ffmpeg
+### Installation
+You will need to install [`ffmpeg`](https://ffmpeg.org/), as well as the Python packages `yt-dlp` and `openai-whisper` 
 
-To install FFmpeg
-  - For Mac, it's often easiest to use homebrew, if you have it:
-    ```bash
-    brew install ffmpeg
-    ```
-  - For Windows:
-       Download and install the binary from, e.g. ffmpeg.org
 
-- Open a terminal window and create/activate a virtual environment for this project. (The Python scripts need the latest `yt-dlp` and `openai-whisper` packages.)
+_Installing FFmpeg_
+
+MacOS using homebrew (https://brew.sh/)
+
+  ```bash
+  brew install ffmpeg
+  ```
+    
+Ubuntu or Debian Linux
+
+  ```bash
+  sudo apt update && sudo apt install ffmpeg
+  ```
+    
+Arch Linux
+
+  ```bash
+  sudo pacman -S ffmpeg
+  ```
+
+Windows: Download and install the binary from, e.g. [`ffmpeg.org`](https://ffmpeg.org/)
+
+Install `yt-dlp` and `openai-whisper` packages. 
 
 ### Running the Program
 - Run the `download_pycon_talks.py` script with a command line argument of the events whose talks you want to download. These names are in the data/ folder and are like "pycon-us-2019" or "pytexas-2024". (There are over 400 events, each with dozens of talks.) Do not add the .mp4 video files to the git repo. You may need several gigabytes free to contain all the video files, depending on the size of the conference.
@@ -62,7 +76,7 @@ To install FFmpeg
 - Using these notes, read through the transcription and make needed corrections. If there are many errors, you may need to play the original talk video (on 2x speed) while reading along to get context, or look up talk info to get things like the correct spelling of the speaker's name.
 - Use [https://trends.google.com/](https://trends.google.com/) if you need to determine which term or spelling is more popular. For example, I needed to compare if "foot gun" or "footgun" was the more popular term.
 - Commit the corrected .srt transcript as, for example, `pytexas-2024/talk-name.srt`. (We'll use the existence of this file in the repo as a sign that it is finished. Please don't commit half-finished .srt files.) DO NOT CHANGE THE ORIGINAL SRT FILE IN THE `pytexas-2024/originals` FOLDER. COMMIT A NEW FILE.
-- Send the videos to the YouTube channel owner so they can add them to the video.
+- Send the subtitles to the YouTube channel owner so they can add them to the video.
 
 In the future, we'll be adding these transcripts to the PyVideo repo so that they can be searchable on that site. We'll also create translations of these subtitles to non-English languages.
 
